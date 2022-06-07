@@ -2,17 +2,25 @@
 
 
 {% block content %}
+{% load crispy_forms_tags %}
 <head>
 <title>Formulario</title>
 </head>
 <body>
+  <section id="formulario" class="container">
+    <div class="col-12 col-md-6 offset-md-3">
+      <div class="text-center"> <h2>Contacta con Nosotros</h2></div>
+      <form action ="" class="" method="post">
 
+          {% csrf_token %}
+          
+          {{ form | crispy }}
+          
+          <!--div class="col-md-8">
+            <label for="inputName" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Ingrese su Nombre">
+          </div>
 
-
-    <section>
-
-
-        <form class="row g-3 d-flex justify-content-center p-5 bg-white">
           <div class="col-md-8  ">
             <label for="inputEmail4" class="form-label">Email</label>
             <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
@@ -27,29 +35,34 @@
             <input type="textarea" class="form-control" id="inputCity" placeholder="Ingrese su ciudad">
           </div>
           <div class="col-md-8">
-            <label for="inputState" class="form-label">Sexo</label>
+            <label for="inputState" class="form-label">Tipo de Consulta</label>
             <select id="inputState" class="form-select">
               <option selected>Elige...</option>
-              <option>Masculino</option>
-              <option>Femenino</option>
+              <option>Consulta</option>
+              <option>Cotizacion</option>
+              <option>Sugerencia</option>
+              <option>Felicitaciones</option>
+              <option>Reclamo</option>
             </select>
           </div>
 
           <div class="col-md-8">
             <label for="exampleFormControlTextarea1">Mensaje</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
+          </div-->
          
-    
-          <div class="col-12 d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary">Enviar</button>
+          <br>
+          <div class="col-12 d-flex justify-content-end">
+            <input type="reset" value="Cancelar" class="btn btn-secondary">
+            &nbsp;
+            <button type="submit" class="btn btn-primary">Enviar</button>                                  
           </div>
-        </form>
+          <br>
+          <div class="text-center"> <h2>{{mensaje}}</div>
+      </form>   
     
-    
-    
-      </section>
-    
+    </div>
+  </section>   
 </body>
     
 {% endblock content %}    

@@ -1,0 +1,38 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<head>
+    <title>Registro</title>
+</head>
+
+<body>
+    <section id="Registro" class="container">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="text-center"> <h2>Registro de Usuarios</h2></div>
+                <form action ="" class="" method="post">
+
+                    {% csrf_token%}
+                    {{ form | crispy }}
+
+                    <a href="{% url 'login' %}">ir al Login</a>
+
+                    <br>
+                    <div class="col-12 d-flex justify-content-end">
+                        <input type="submit" value="Registrarse" class="btn btn-success">
+                                              
+                    </div>
+                    <br>
+              
+                </form>   
+          
+            </div>
+        </div>
+    </section>  
+
+</body>
+
+
+{% endblock content %}  
