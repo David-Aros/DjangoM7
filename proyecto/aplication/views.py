@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
+from aplication.models import Registro
 
 #from proyecto.aplication.models import Registro
 from .forms import ContactoForm, CustomUserCreationForm
@@ -45,6 +46,14 @@ def registro1(request):
 
 
     return render(request, 'registration/registro.html', data)
+
+
+def usuarios_list(request):
+    usuarios = Registro.objects.all()
+    contexto = {'usuarios': usuarios}
+    return render(request, 'aplication/tablausers.html', contexto)
+
+
 
 
 

@@ -1,0 +1,43 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+<head>
+<title>Tabla de Usuarios</title>
+</head>
+<body>
+    <section id="tabla" class="container">
+        <div class="text-center"> <h2>Usuario Registrados en la aplicacion</h2></div>
+        <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Direccion</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% if usuarios %}
+                {% for usuarios in usuarios %}
+                <tr>
+                    <td scope="row"></td>
+                    <td>{{ usuarios.nombre }}  </td>
+                    <td>{{ usuarios.apellido }} </td>
+                    <td>{{ usuarios.email }} </td>
+                    <td>{{ usuarios.direccion }} </td>
+                </tr>
+                {% endfor %}
+
+                {% else %}
+                <h2> No hay Usuarios Registrados </h2>
+
+                {% endif %}
+            </tbody>
+          </table>   
+    </section>
+</body>
+    
+{% endblock content %}  
