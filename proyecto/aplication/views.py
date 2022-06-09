@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from aplication.models import Registro
 from aplication.models import Portafolio
 
+
 #from proyecto.aplication.models import Registro
 from .forms import ContactoForm, CustomUserCreationForm, PortafolioForm
 
@@ -41,7 +42,7 @@ def registro1(request):
             user = authenticate(username=formulario1.cleaned_data["username"], 
             password=formulario1.cleaned_data["password1"])
             login(request, user)
-            messages.success(request,"Registrado Correctamente")
+            
 
             return redirect(to="/")
         data["form"] = formulario1
@@ -102,6 +103,7 @@ def modificar(request, id):
 
         if formulario3.is_valid():
             formulario3.save()
+           
             return redirect(to="lista" )
         
         data['form'] = formulario3
@@ -113,6 +115,8 @@ def eliminar(request, id):
 
     eliminar = get_object_or_404(Portafolio, id=id)
     eliminar.delete()
+
+    
 
     return redirect(to="lista")
         
