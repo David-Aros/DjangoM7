@@ -37,20 +37,20 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="{% url 'index' %}">MiApp</a></h1>
+      <h1 class="logo me-auto"><a href="{% url 'index' %}">Te lo Vendo App</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
 
-      <a href="{% url 'index'%}" class="logo me-auto"><img src="{% static 'img/logo.png'%}" alt="" class="img-fluid"></a>
+      <a href="{% url 'index'%}" class="logo"><img src="{% static 'img/logo.png'%}" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{% url 'index'%}">Home</a></li>
+          <li><a href="{% url 'index'%}">Inicio</a></li>
 
           <li><a href="#about">Acerca de</a></li>
           {% if perms.aplication.view_portafolio %}
           <li><a href="{% url 'lista'%}">CRUD</a></li>
           {%endif %}
-          <li><a href="{% url 'portafolio'%}">Portafolios</a></li>
+          <li><a href="{% url 'portafolio'%}">Trabajos Realizados</a></li>
 
           {% if user.is_authenticated %}
           <li><a href="{% url 'usuarios'%}">Tabla Usuarios</a></li>
@@ -96,11 +96,11 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>MiApp</h3>
+              <h3>Te lo Vendo</h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
+                A108 Calle 10 <br>
+                Los Andes, ChileA<br><br>
+                <strong>Telefono:</strong> +56 9 89554885<br>
                 <strong>Email:</strong> info@example.com<br>
               </p>
               <div class="social-links mt-3">
@@ -114,30 +114,30 @@
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Links de Utilidad</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Inicio</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Acerca de</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Servicios</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terminos y condiciones</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacidad.</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Nuestros Servicios</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Diseño Web</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Desarrollo Web</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Redes Sociales</a></li>
+              
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Newsletter</h4>
+            <p>suscribete a nuestro Newsletter y se un suscriptor</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
@@ -150,11 +150,11 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Sailor</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Te lo Vendo App</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Diseñado por  <a href="#">Te lo Vendo</a>
       </div>
     </div>
   </footer><!-- End Footer -->
