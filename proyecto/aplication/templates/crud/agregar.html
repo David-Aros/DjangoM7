@@ -1,0 +1,45 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+<head>
+    <title>Agregar</title>
+</head>
+{% load static %}
+<body>
+
+    <section id="formulario" class="container">
+        <div class="text-center"> <h2>Agregar Portafolio</h2></div>
+
+            
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+            
+                
+                        <form action ="" class="" method="post" enctype="multipart/form-data">
+    
+                            {% csrf_token %}
+              
+                            {{ form | crispy }}
+
+                            <br>
+                            <div class="col-12 d-flex justify-content-end">
+                                <input type="reset" value="Cancelar" class="btn btn-secondary">
+                                &nbsp;
+                                <button type="submit" class="btn btn-primary">Guardar</button>                                  
+                            </div>
+                            <br>                            
+                            <div class="text-center"> <h2>{{mensaje}}</div>
+                        </form>
+                    </div>
+                </div>
+            </div>   
+        
+        </div>
+    </section> 
+
+</body>
+
+{% endblock content %}

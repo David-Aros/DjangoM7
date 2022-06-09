@@ -14,5 +14,10 @@ urlpatterns = [
     path('formulario/', views.formulario, name='formulario'),
     path('registro/', views.registro1, name='registro1'),
     path('usuarios', views.usuarios_list, name='usuarios'),
+    path('portafolio', views.portafolio, name='portafolio'),
+    path('agregar', views.agregar, name='agregar'),
+    path('lista', views.lista, name='lista'),
+    path('modificar/<id>', views.modificar, name='modificar'),
+    path('eliminar/<id>', views.eliminar, name='eliminar'),
     
 ]

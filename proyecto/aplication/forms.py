@@ -1,6 +1,7 @@
 from django import forms
 from .models import Contacto
 from .models import Suscriptores
+from .models import Portafolio
 from django.contrib.auth.forms import UserCreationForm
 
 class ContactoForm(forms.ModelForm):
@@ -20,3 +21,10 @@ class SuscriptoresForm(forms.ModelForm):
 
 class CustomUserCreationForm(UserCreationForm):
     pass
+
+
+class PortafolioForm(forms.ModelForm):
+
+    class Meta:
+        model = Portafolio
+        fields = '__all__'

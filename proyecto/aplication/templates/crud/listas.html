@@ -1,0 +1,58 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<head>
+<title>Listas</title>
+</head>
+<body>
+  <section id="titulo" class="container">
+    <div class="text-center"> <h2>Lista de Portafolios</h2></div>  
+    
+      <table class="table table-sm table-dark table-striped table-responsive-sm table-responsive-md">
+        <thead>
+          <tr>
+            <th scope="col">Proyecto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>            
+            <th scope="col">Fecha Creacion</th> 
+            <th scope="col">Opciones</th>
+            <th scope="col"><a href="{% url 'agregar' %}" class="btn btn-success btn-sm">AGREGAR<a/></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% if lista %}
+          {% for p in lista %}
+          <tr>
+              <td>{{ p.tipo }}  </td>
+              <td>{{ p.nombre }} </td>
+              <td>{{ p.descripcion }} </td>
+              
+              <td>{{ p.fecha_creacion }} </td>
+              <td>
+                <a href="{% url 'modificar' p.id %}" class="btn btn-info btn-sm">modificar<a/>
+
+                <td>
+                
+                <a href="{% url 'eliminar' p.id %}" class="btn btn-danger btn-sm">eliminar<a/>
+                
+                </td>
+                
+              </td>
+          </tr>
+          {% endfor %}
+
+          {% else %}
+          <h2> No hay Portafolios Registrados </h2>
+
+          {% endif %}
+        </tbody>
+      </table>   
+    </div>
+  </section>  
+</body>
+    
+{% endblock content %}  

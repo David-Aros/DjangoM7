@@ -46,11 +46,16 @@
         <ul>
           <li><a href="{% url 'index'%}">Home</a></li>
 
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">Acerca de</a></li>
+          {% if perms.aplication.view_portafolio %}
+          <li><a href="{% url 'lista'%}">CRUD</a></li>
+          {%endif %}
+          <li><a href="{% url 'portafolio'%}">Portfolios</a></li>
+
+          {% if user.is_authenticated %}
           <li><a href="{% url 'usuarios'%}">Tabla Usuarios</a></li>
-          
+          {% endif %}
+
           <li><a href="{% url 'formulario'%}">Contacto</a></li>
           {% if user.is_authenticated %}
           <li>
@@ -131,7 +136,7 @@
             <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">
-              <input type="submit" value="Subscribirse">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
 
           </div>
